@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Programa = ({data}) => {
-  
+  console.log(data);
    return (
     <>
       <div className="flex flex-col">
@@ -61,7 +61,7 @@ const Programa = ({data}) => {
                       {item.properties.IP_DANTE.rich_text.length > 0 ? item.properties.IP.rich_text[0].plain_text : 'No'}
                       </td>
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.CUENTA_PARSEC.multi_select.length > 0 ? item.properties.CUENTA_PARSEC.multi_select.map(multiSelectOption => multiSelectOption.name).join(', ') : 'No'}
+                      {item.properties.PARSECROLL.rollup.array.length > 0 ? item.properties.PARSECROLL.rollup.array.map(multiSelectOption => multiSelectOption.title[0].plain_text).join(', ') : 'No'}
                       </td>                      
                     </tr>
                   ))}
