@@ -7,7 +7,7 @@ import { Client } from "@notionhq/client";
 import Programa from "../components/programas/superliga";
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const notion = new Client({ auth: process.env.NOTION_API_KEY });
   
     const respuesta = await notion.databases.query({
