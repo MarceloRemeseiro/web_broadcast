@@ -6,9 +6,6 @@ import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Image from "next/image";
 
-
-
-
 export default function Home({ ValorantNacional,superligaPrimera }) {
   return (
     <div>
@@ -28,11 +25,12 @@ export default function Home({ ValorantNacional,superligaPrimera }) {
           <Header data="WEB BROADCAST LVP"/>
         </div>
         <div className="container flex justify-center items-center gap-10">
-          <div className="w-full h-full overflow-hidden h-80">
+          <div className="w-full h-full overflow-hidden">
           <Image src="/racks.jpg" 
           width={800}
           height={800}
           className="opacity-25 w-full h-full object-cover"
+          alt="fondo"
           />
           </div>   
         </div>
