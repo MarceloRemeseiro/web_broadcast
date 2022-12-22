@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Navbar from "../components/navbar/Navbar";
 import Script from "next/script";
-import Superliga from "../components/programas/superliga";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Image from "next/image";
 
-export default function Home({ ValorantNacional,superligaPrimera }) {
+
+export default function Home({ ValorantNacional, superligaPrimera }) {
   return (
     <div>
       <Head>
@@ -22,21 +22,21 @@ export default function Home({ ValorantNacional,superligaPrimera }) {
         <Navbar />
         <div className="m-28"></div>
         <div>
-          <Header data="WEB BROADCAST LVP"/>
+          <Header data="WEB BROADCAST LVP" />
         </div>
         <div className="container flex justify-center items-center gap-10">
-          <div className="w-full h-full overflow-hidden">
-          <Image src="/racks.jpg" 
-          width={800}
-          height={800}
-          className="opacity-25 w-full h-full object-cover"
-          alt="fondo"
-          />
-          </div>   
+          <div className="w-ful h-full overflow-hidden">
+            <Image
+              src="/racks.jpg"
+              width={800}
+              height={800}
+              className="opacity-25 w-full object-cover"
+              alt="fondo"
+            />
+          </div>
         </div>
         <Footer />
       </main>
     </div>
   );
 }
-

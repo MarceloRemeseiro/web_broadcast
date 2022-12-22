@@ -39,7 +39,7 @@ const Navbar = () => {
               </Link>
           </li>
           <li>
-          <Link href="/"
+          <Link href="/enlaces"
               className="py-7 px-3 inline-block hover:text-secondary">
                 Enlaces de interes
               </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
               setOpen();
             }}
           >
-            <Link href="/"
+            <Link href="/enlaces"
               className="py-7 px-3 inline-block hover:text-secondary">
                                 Enlaces de interes
 
