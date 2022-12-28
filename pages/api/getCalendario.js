@@ -1,4 +1,4 @@
-import { Client } from 'notion-client';
+import { Client } from '@notionhq/client';
 
 export default function ManageData(action, data) {
   return {
