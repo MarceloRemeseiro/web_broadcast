@@ -14,7 +14,6 @@ const ManageData = () => (
       const notion = new Client({
         auth: process.env.NOTION_API_KEY,
       });
-      console.log(rocess.env.NOTION_API_KEY);
       await notion.pages.create({
         parent: {
           database_id: 'b3e414c59aaf4c3a81f87ec3be38f369',
