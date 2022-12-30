@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Programa = ({data}) => {
-  console.log(data);
+  
    return (
     <>
       <div className="flex flex-col">

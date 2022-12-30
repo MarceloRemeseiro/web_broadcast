@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'server': "url('/img/racks.png')",
+      },
       borderRadius: {
         DEFAULT: "0.3rem",
       },
@@ -15,7 +18,7 @@ module.exports = {
         dark: "#13151b",
         medium: "#252933",
         primary: "#181a20",
-        secondary: "#7fcb29",
+        secondary: "red",
       },
     },
     container: {

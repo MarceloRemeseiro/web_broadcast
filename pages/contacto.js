@@ -1,46 +1,42 @@
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
-import GetInfo from "./api/GetInfo";
+import Programa from "../components/programas/programa";
+import GetInfo from "./api/GetInfo"
 import Link from "next/link";
-import { BasicButton } from "../components/buttons/buttons";
 
-export const getServerSideProps = GetInfo("e2a75febc30046f98ce1f33863f690aa").getServerSideProps;
+export const getServerSideProps = GetInfo("1c3ef8af8ec2489ab24cfd4ffb3f8470").getServerSideProps;
 
-export default function Enlaces({ datos }) {
-  console.log(datos);
-  return (
-    <div>
-      <main>
+  export default function ContactoPage( {datos} ) {
+    return (
+      <div>         
+          <main>
         <Navbar />
         <div className="m-28"></div>
         <div>
-          <Header data="ENLACES DE INTERES" />
+          <Header data="CONTACTOS" />
         </div>
         <div className=" flex justify-center items-center ">
           <div className="container  p-14">
             <div class="grid grid-cols-3 gap-10 ">
               {datos.map((item) => (
                 <div
-                  key={item.properties.link.url}
+                  key={item.properties.CORREO.url}
                   className="w-full h-64 object-cover bg-zinc-700 rounded-lg shadow-md gap-12"
                 >
                   <h1 className="text-3xl text-center m-5">
-                    {item.properties.PROGRAMA.select.name}
+                    {item.properties.CONTACTO.select.name}
                   </h1>
                   <h5 className="mb-5 text-center">
                     {" "}
                     {item.properties.titulo.title[0].plain_text}
                   </h5>
-                  <Link
-                    href={item.properties.link.url}
-                    as={item.properties.link.url}
-                    target="_blank"
-                  >
-                    <div className="text-center">
-                      <BasicButton>ACCEDER</BasicButton>
-                    </div>
-                  </Link>
+                  <h5 className="mb-5 text-center">
+                    📩 {item.properties.CORREO.email}
+                  </h5>
+                  <h5 className="mb-5 text-center">
+                    ☎ {item.properties.TELEFONO.phone_number}
+                  </h5>
                 </div>
               ))}
             </div>
@@ -48,6 +44,6 @@ export default function Enlaces({ datos }) {
         </div>
         <Footer />
       </main>
-    </div>
-  );
-}
+      </div>
+    );
+  }

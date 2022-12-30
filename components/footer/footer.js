@@ -19,23 +19,20 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link href="/"
-                    className="hover:text-secondary transition">About us
+                  <Link
+                    href="/calendario"
+                    className="hover:text-secondary transition"
+                  >
+                    Calendario
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/"
-                    className="hover:text-secondary transition">
-                      Terms of Use
-                    
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/"
-                    className="hover:text-secondary transition">
-                      Privacy Policy
-                    
+                  <Link
+                    href="/enlaces"
+                    className="hover:text-secondary transition"
+                  >
+                    Enlaces de interes
                   </Link>
                 </li>
               </ul>
@@ -46,23 +43,29 @@ const Footer = () => {
                 </h1>
                 <li>
                   <Link
-                    href="#"
+                    href="https://www.twitch.tv/lvpes" target="_blank"
                     className="flex items-center space-x-3 hover:text-secondary transition"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
-                      className="w-5"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 128 134"
+                      width={18}
                     >
-                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                      
+                      <path
+                        class="cls-1"
+                        d="M89,77l-9,23v94h32v17h18l17-17h26l35-35V77H89Zm107,76-20,20H144l-17,17V173H100V89h96v64Zm-20-41v35H164V112h12Zm-32,0v35H132V112h12Z"
+                        transform="translate(-80 -77)"
+                      ></path>{" "}
                     </svg>
-                    <span>Github</span>
+
+                    <span>Twitch</span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="https://twitter.com/LVPes" target="_blank"
                     className="flex items-center space-x-3 hover:text-secondary transition"
                   >
                     <svg
@@ -78,7 +81,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="https://www.youtube.com/@LVPward" target="_blank"
                     className="flex items-center space-x-3 hover:text-secondary transition"
                   >
                     <svg
@@ -95,7 +98,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href="#"
+                    href="https://www.facebook.com/LigadeVideojuegosProfesional/" target="_blank"
                     className="flex items-center space-x-3 hover:text-secondary transition"
                   >
                     <svg
@@ -112,7 +115,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href="#"
+                    href="https://www.instagram.com/lvp_es/" target="_blank"
                     className="flex items-center space-x-3 hover:text-secondary transition"
                   >
                     <svg
@@ -130,22 +133,15 @@ const Footer = () => {
             </div>
             <div className="w-10/12 m-auto  mt-16 space-y-6 text-center sm:text-left sm:w-5/12 sm:mt-auto">
               <span className="block text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti nemo provident aliquid voluptates, labore ratione.
-                Deleniti atque id odit asperiores suscipit porro necessitatibus
-                eveniet, veniam omnis ipsum! Eveniet, omnis fugiat.{" "}
+                Página web de gestion de controles y calendario de LVP
               </span>
 
-              <span className="block text-gray-300">
-                Talking Parrot &copy; 2022
-              </span>
-
-              <span className="block text-gray-300">
-                Need help?
-                <Link href="#" className="font-semibold text-white">
-                  Contact Us
-                </Link>
-              </span>
+              <span className="block text-gray-300">LVP &copy; 2022</span>
+              <Link href="/contacto" className="font-semibold text-white">
+                <span className="block text-gray-300">
+                  Necesitas Ayuda? Contacta
+                </span>{" "}
+              </Link>
             </div>
           </div>
         </div>
@@ -163,6 +159,12 @@ const Footer = () => {
         aria-hidden="true"
         className="absolute inset-0 w-full h-full bg-dark opacity-80"
       ></div>
+      <Link
+        href="/formularioFechas"
+        className="absolute bottom-0 z-50 right-0 text-dark text-9xl hover:bg-secondary"
+      >
+        *
+      </Link>
     </footer>
   );
 };

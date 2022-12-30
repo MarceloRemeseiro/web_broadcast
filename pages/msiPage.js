@@ -5,16 +5,16 @@ import Header from "../components/header/header";
 import Programa from "../components/programas/programa";
 import Get from "./api/get"
 
-export const getServerSideProps = Get('MSI').getServerSideProps;
+export const getServerSideProps = Get("PROGRAMA",'MSI').getServerSideProps;
 
-export default function SuperligaPage({ datos }) {
+export default function msi({ datos }) {
     return (
       <div>         
       <main>  
         <Navbar />
         <div className="m-28"></div>
         <div>
-          <Header data="Máquinas eLaliga 1" />
+          <Header data="Máquinas MSI" />
         </div>
         <div className="container flex justify-center items-center gap-10">
           <div className="container  bg-dark rounded">

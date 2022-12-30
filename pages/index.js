@@ -4,6 +4,7 @@ import Script from "next/script";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Home( ) {
@@ -24,19 +25,20 @@ export default function Home( ) {
         <div>
           <Header data="WEB BROADCAST LVP" />
         </div>
-        <div className="container flex justify-center items-center gap-10">
+        <div className="container flex justify-center items-center gap-10 ">
           <div className="w-ful h-full overflow-hidden">
             <Image
-              src="/racks.jpg"
-              width={800}
-              height={800}
+              src="/racks.png"
+              width={1800}
+              height={1800}
               className="opacity-25 w-full object-cover"
               alt="fondo"
             />
-          </div>
+          </div> 
         </div>
         <Footer />
       </main>
+      
     </div>
   );
 }

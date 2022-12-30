@@ -4,16 +4,16 @@ import Header from "../components/header/header";
 import Programa from "../components/programas/programa";
 import Get from "./api/get"
 
-export const getServerSideProps = Get('ELALIGA1').getServerSideProps;
+export const getServerSideProps = Get("PROGRAMA",'ELALIGA1').getServerSideProps;
 
-  export default function elaliga( {datos} ) {
+  export default function elaliga1( {datos} ) {
     return (
       <div>         
         <main>  
           <Navbar />
           <div className="m-28"></div>
           <div>
-            <Header data="Máquinas eLaliga 1" />
+            <Header data="Máquinas ELALIGA 1" />
           </div>
           <div className="container flex justify-center items-center gap-10">
             <div className="container  bg-dark rounded">

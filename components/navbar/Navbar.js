@@ -8,15 +8,14 @@ import NavLinks from "./Navlinks";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="bg-gradient-to-r from-dark via-dark to-black fixed top-0 left-0 w-full  z-50">
+    <nav className="bg-black fixed top-0 left-0 w-full  z-50">
       <div className="flex items-center font-medium justify-around">
-        <div className="bg-dark z-50 p-5  md:w-auto w-full flex justify-between">
+        <div className="bg-black z-50 p-0  md:w-auto w-full flex justify-between">
           <Image
             src={Logo}
             alt="logo"
-            className="md:cursor-pointer h-10"
-            height={50}
-            width={40}
+            className="md:cursor-pointer"
+            width="150"
           />
           <div
             className="text-3xl md:hidden text-white"
@@ -27,28 +26,36 @@ const Navbar = () => {
         </div>
         <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins] ">
           <li>
-            <Link href="/"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                Home
-              </Link>
+            <Link
+              href="/"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Home
+            </Link>
           </li>
           <li>
-          <Link href="/"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                Tutoriales 
-              </Link>
+            <Link
+              href="/calendario"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Calendario
+            </Link>
           </li>
           <li>
-          <Link href="/enlaces"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                Enlaces de interes
-              </Link>
+            <Link
+              href="/enlaces"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Enlaces de interes
+            </Link>
           </li>
           <NavLinks />
-        </ul>
-        <div className="md:block hidden">
-          <BasicButton>BOTON</BasicButton>
-        </div>
+        </ul>{" "}
+        <Link href="/contacto">
+          <div className="md:block hidden">
+            <BasicButton>CONTACTOS</BasicButton>
+          </div>
+        </Link>
         {/* Mobile nav */}
         <ul
           className={`
@@ -61,37 +68,43 @@ const Navbar = () => {
               setOpen();
             }}
           >
-            <Link href="/"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                Home
-              </Link>
+            <Link
+              href="/"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Home
+            </Link>
           </li>
           <li
             onClick={() => {
               setOpen();
             }}
           >
-            <Link href="/"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                Tutoriales
-              </Link>
+            <Link
+              href="/calendario"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Calendario
+            </Link>
           </li>
           <li
             onClick={() => {
               setOpen();
             }}
           >
-            <Link href="/enlaces"
-              className="py-7 px-3 inline-block hover:text-secondary">
-                                Enlaces de interes
-
-              </Link>
+            <Link
+              href="/enlaces"
+              className="py-7 px-3 inline-block hover:text-secondary"
+            >
+              Enlaces de interes
+            </Link>
           </li>
           <NavLinks />
-
-          <div className="py-5">
-            <BasicButton>BOTON</BasicButton>
-          </div>
+          <Link href="/contacto">
+            <div className="py-5">
+              <BasicButton>CONTACTOS</BasicButton>
+            </div>
+          </Link>
         </ul>
       </div>
     </nav>

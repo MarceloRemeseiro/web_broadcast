@@ -1,44 +1,63 @@
-import { Client } from '@notionhq/client';
+const { Client } = require("@notionhq/client");
 
-export default function ManageData(action, data) {
-  return {
-    props: {
-      getServerSideProps: async () => {
-        const notion = new Client({
-          auth: process.env.NOTION_API_KEY,
-        });
+const notion = new Client({
+  auth: process.env.NOTION_API_KEY,
+});
 
-        switch (action) {
-          case 'create': {
-            const respuesta = await notion.pages.create({
-              parent: {
-                database_id: 'b3e414c59aaf4c3a81f87ec3be38f369',
-              },
-              properties: data.properties,
-            });
-            console.log(respuesta);
-            break;
-          }
-          case 'update': {
-            const respuesta = await notion.pages.update({
-              pageId: data.pageId,
-              properties: data.properties,
-            });
-            console.log(respuesta);
-            break;
-          }
-          case 'delete': {
-            const respuesta = await notion.pages.delete({
-              pageId: data.pageId,
-            });
-            console.log(respuesta);
-            break;
-          }
-          default: {
-            throw new Error('Invalid action');
-          }
-        }
+module.exports = async function handler(req, res) {
+  const { jornada, programas, control, fecha } = req.body;
+  await notion.pages
+    .create({
+      parent: {
+        database_id: "b3e414c59aaf4c3a81f87ec3be38f369" || "",
       },
-    },
-  };
-}
+
+      properties: {
+        jornada: {
+          title: [
+            {
+              type: "text",
+              text: {
+                content: jornada,
+              },
+            },
+          ],
+        },
+        programas: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: programas,
+              },
+            },
+          ],
+        },
+
+        control: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: control,
+              },
+            },
+          ],
+        },
+        fecha: {
+          date: {
+            start: fecha,
+          },
+        },
+      },
+    })
+    .then(() => {
+      res.status(201).json({ message: "Sucesso!" });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({ message: "Ops, algo deu errado!" });
+    });
+};

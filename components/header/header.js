@@ -1,10 +1,13 @@
 import React from "react";
 
 const Header = ({data}) => {
-  console.log(data);
+  
   return (
-    <div className="container h-[150px] bg-black mb-10 rounded">
-      <h1 className="text-secondary text-6xl text-center pt-8">{data}</h1>
+    <div className="container h-28 bg-black mb-10 rounded flex">
+     
+        <h1 className="text-secondary my-auto mx-auto text-center text-3xl">{data}</h1>
+     
+      
     </div>
   );
 };
