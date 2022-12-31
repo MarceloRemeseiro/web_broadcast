@@ -11,12 +11,15 @@ const Navbar = () => {
     <nav className="bg-black fixed top-0 left-0 w-full  z-50">
       <div className="flex items-center font-medium justify-around">
         <div className="bg-black z-50 p-0  md:w-auto w-full flex justify-between">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="md:cursor-pointer"
-            width="150"
-          />
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="logo"
+              className="md:cursor-pointer"
+              width="150"
+            />
+          </Link>
+
           <div
             className="text-3xl md:hidden text-white"
             onClick={() => setOpen(!open)}

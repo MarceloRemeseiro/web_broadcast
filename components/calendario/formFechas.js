@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../styles/Home.module.css";
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const FormularioFechas = ({ datos }) => {
   const [data, setData] = useState({
@@ -22,9 +23,12 @@ const FormularioFechas = ({ datos }) => {
     axios
       .post("/api/getCalendario", data)
       .then(() => {
-        console.log("Fecha Agregada!", data);
+        toast.success("Fecha Agregada! " + data.programas + " "+ (new Date(data.fecha)).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }))
+        
+        
       })
       .catch((e) => {
+        toast.error("Algo ha salido mal")
         console.log("Algo ha ido mal", e.message);
       });
   };
