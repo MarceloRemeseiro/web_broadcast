@@ -19,7 +19,7 @@ export default function Enlaces({ datos }) {
         </div>
         <div className=" flex justify-center items-center ">
           <div className="container  p-14">
-            <div class="grid grid-cols-3 gap-10 ">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 ">
               {datos.map((item) => (
                 <div
                   key={item.properties.link.url}
