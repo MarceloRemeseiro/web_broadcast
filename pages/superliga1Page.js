@@ -2,27 +2,43 @@ import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Programa from "../components/programas/programa";
-import Get from "./api/get"
+import Get from "./api/get";
+import GetFechas from "./api/getFechas";
+import Calendario from "../components/calendario/calendario";
 
-export const getServerSideProps = Get("PROGRAMA",'SUPERLIGA1').getServerSideProps;
 
+export async function getServerSideProps() {
+  const programas = await Get("PROGRAMA", "SUPERLIGA1").getServerSideProps();
+  const fechas = await GetFechas("SUPERLIGA1").getServerSideProps();
+  return {
+    props: {
+      datos: programas.props.datos,
+      fechas: fechas.props.fechas,
+    },
+  };
+}
 
-  export default function superliga1({ datos }) {
-    return (
-      <div>         
-      <main>  
+export default function superliga1({ datos, fechas }) {
+  return (
+    <div>
+      <main>
         <Navbar />
         <div className="m-28"></div>
         <div>
-          <Header data="Máquinas SUPERLIGA 1" />
+          <Header data="SUPERLIGA 1" />
         </div>
+        <Header data="MAQUINAS" />
+
         <div className="container flex justify-center items-center gap-10">
           <div className="container  bg-dark rounded">
-            <Programa  data ={datos}/>
-          </div>   
+            <Programa data={datos} />
+            <Header data="FECHAS" />
+
+            <Calendario datos={fechas} />
+          </div>
         </div>
         <Footer />
       </main>
     </div>
-    );
-  }
+  );
+}

@@ -3,26 +3,40 @@ import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import Programa from "../components/programas/programa";
 import Get from "./api/get"
+import GetFechas from "./api/getFechas";
+import Calendario from "../components/calendario/calendario";
 
-export const getServerSideProps = Get("PROGRAMA",'VALORANT INT').getServerSideProps;
+export async function getServerSideProps() {
+  const programas = await Get("PROGRAMA", "VALORANT INT").getServerSideProps();
+  const fechas = await GetFechas("VALORANT INT").getServerSideProps();
+  return {
+    props: {
+      datos: programas.props.datos,
+      fechas: fechas.props.fechas,
+    },
+  };
+}
 
-
-  export default function valorantInt({ datos }) {
-    return (
-      <div>         
-      <main>  
+export default function valorantInt({ datos, fechas }) {
+  return (
+    <div>
+      <main>
         <Navbar />
         <div className="m-28"></div>
         <div>
-          <Header data="Máquinas VALORANT INTERNACIONAL" />
+          <Header data="VALORANT INTERNACIONAL" />
         </div>
+        <Header data="MAQUINAS" />
+
         <div className="container flex justify-center items-center gap-10">
           <div className="container  bg-dark rounded">
-            <Programa  data ={datos}/>
-          </div>   
+            <Programa data={datos} />
+            <Header data="FECHAS" />
+            <Calendario datos={fechas} />
+          </div>
         </div>
         <Footer />
       </main>
     </div>
-    );
-  }
+  );
+}
