@@ -35,6 +35,10 @@ export default function GetFechas(programa = "") {
             property: "fecha",
             direction: "ascending",
           },
+          {
+            property: "programas",
+            direction: "ascending",
+          },
         ],
       });
 
