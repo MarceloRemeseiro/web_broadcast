@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const Calendario = ({datos}) => {
   console.log(datos);
+   
     
   return (
     <>
@@ -23,6 +24,12 @@ const Calendario = ({datos}) => {
                       scope="col"
                       className="text-sm font-medium text-white bg-fondo px-6 py-4 text-center"
                     >
+                      JORNADA
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white bg-fondo px-6 py-4 text-center"
+                    >
                       PROGRAMA
                     </th>
                     <th
@@ -38,10 +45,13 @@ const Calendario = ({datos}) => {
                     <tr className="border-b " key="">
                       <td className="  px-6 py-4 whitespace-nowrap">
                       {(new Date(item.properties.fecha.date.start)).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}                      </td>
-                      <td className="  px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                      {item.properties.jornada.title[0].plain_text}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
                       {item.properties.programas.rich_text[0].plain_text}
                       </td>
-                      <td className="  px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap">
                       {item.properties.control.rich_text[0].plain_text}
                       </td>                                           
                     </tr>
