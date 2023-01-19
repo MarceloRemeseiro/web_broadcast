@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 const Calendario = ({datos}) => {
-  console.log(datos);
-   
-    
-  return (
+   return (
     <>
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">

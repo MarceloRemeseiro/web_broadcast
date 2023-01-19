@@ -1,9 +1,8 @@
 import React from "react";
 
-
-const Programa = ({data}) => {
-  
-   return (
+const Programa = ({ data }) => {
+  console.log(data);
+  return (
     <>
       <div className="flex flex-col mb-10">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -41,28 +40,36 @@ const Programa = ({data}) => {
                       className="text-sm font-medium text-white bg-fondo px-6 py-4 text-center"
                     >
                       PARSEC
-                    </th>                  
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="text-white bg-medium text-center">
-                {data.map((item) => (
+                  {data.map((item) => (
                     <tr className="border-b " key="">
-                      
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.CATEGORIA.select.name}
+                        {item.properties.CATEGORIA.select.name}
                       </td>
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.NOMBRE.select.name}
+                        {item.properties.NOMBRE.select.name}
                       </td>
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.IP.rich_text.length > 0 ? item.properties.IP.rich_text[0].plain_text : 'No'}
+                        {item.properties.IP_TEC.rich_text.length > 0 ? item.properties.IP_TEC.rich_text[0].plain_text : 'No'}
                       </td>
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.IP_DANTE.rich_text.length > 0 ? item.properties.IP.rich_text[0].plain_text : 'No'}
+                        {item.properties.IP_DANTE.rich_text.length > 0
+                          ? item.properties.IP_DANTE.rich_text[0].plain_text
+                          : "No"}
                       </td>
                       <td className="  px-6 py-4 whitespace-nowrap">
-                      {item.properties.PARSECROLL.rollup.array.length > 0 ? item.properties.PARSECROLL.rollup.array.map(multiSelectOption => multiSelectOption.title[0].plain_text).join(', ') : 'No'}
-                      </td>                      
+                        {item.properties.PARSECROLL.rollup.array.length > 0
+                          ? item.properties.PARSECROLL.rollup.array
+                              .map(
+                                (multiSelectOption) =>
+                                  multiSelectOption.title[0].plain_text
+                              )
+                              .join(", ")
+                          : "No"}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
